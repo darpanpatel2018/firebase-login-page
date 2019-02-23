@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>main</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+
+</head>
+
+<body>
+    <h1>welcome</h1>
+
+    <button onclick="logOut()">logOut</button>
+
+    <script src="fireBase.js"></script>
+    <script src="main.js"></script>
+
+
+    <script>
+        document.querySelector('#sign-out').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            firebase.auth().signOut().then(function() {
+                console.log("sign-out successfully!");
+                window.location = "index.html";
+                // Sign-out successful.
+            }).catch(function(error) {
+                // An error happened.
+                console.log("sign-out error!!!!!!!!!!");
+            });
+        });
+    </script>
+</body>
+
+</html>
